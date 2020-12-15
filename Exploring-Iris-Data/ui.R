@@ -6,6 +6,9 @@ library(shinyWidgets)
 shinyUI(pageWithSidebar(  
   titlePanel("Exploration of the Iris Data"), 
   sidebarPanel(  
+    
+    numericInput("x","Enter a value for the response variable:",value=5,min=0),
+    
     checkboxGroupInput(
       "species",
       "Select the type of Species:",
@@ -29,7 +32,7 @@ shinyUI(pageWithSidebar(
   
   mainPanel( 
     tabsetPanel( type="tabs",
-                 tabPanel("Plots",textOutput("text"),plotOutput("plot1"),plotOutput("plot2"),plotOutput("plot3"),plotOutput("plot4"),plotOutput("plot5"),textOutput("plots")),
+                 tabPanel("Plots",textOutput("text"),textOutput("fity"),plotOutput("plot1"),plotOutput("plot2"),plotOutput("plot3"),plotOutput("plot4"),plotOutput("plot5"),textOutput("plots")),
                  tabPanel("Data Table",dataTableOutput("iris"),textOutput("data")),
                  tabPanel("Documentation",br(),textOutput("doc"))
     )
